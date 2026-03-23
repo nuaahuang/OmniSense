@@ -8,6 +8,8 @@ node_modules/
 out/
 dist/
 *.vsix
+.DS_Store
+.vscode/
 
 # OmniSense Runtime (关键：不要上传生成的影子代码)
 .omni/temp_sources/
