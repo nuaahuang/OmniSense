@@ -1,4 +1,4 @@
-package io.github.omni;
+package io.github.h.omni;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
