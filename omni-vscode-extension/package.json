@@ -2,19 +2,26 @@
   "name": "OmniOpenAIDoc",
   "displayName": "OmniOpenAIDoc",
   "description": "AI-Native Semantic Context Bridge for Java Libraries",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nuaahuang/OmniOpenAIDoc.git"
+  },
+  "publisher": "derichuang",
   "engines": {
     "vscode": "^1.85.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:omnisense.sync"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "omniopendoc.sync",
+        "command": "omnisense.sync",
         "title": "OmniOpenAIDoc: Sync Semantic Context"
       }
     ]
@@ -33,7 +40,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
-    "@types/vscode": "^1.110.0",
+    "@types/vscode": "^1.85.0",
     "@vscode/test-cli": "^0.0.12",
     "@vscode/test-electron": "^2.5.2",
     "eslint": "^9.39.3",

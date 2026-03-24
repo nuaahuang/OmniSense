@@ -1,12 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>io.github.nuaahuang</groupId>
   <artifactId>omni-openai-doc-maven-plugin</artifactId>
   <version>1.0.0</version>
   <packaging>maven-plugin</packaging>
-  <name>omni-maven-plugin Maven Mojo</name>
-  <url>http://maven.apache.org</url>
+
+  <name>OmniOpenAIDoc Maven Plugin</name>
+  <description>Semantic distribution protocol for AI-native software supply chains.</description>
+  <url>https://github.com/nuaahuang/OmniOpenAIDoc</url>
+
   <dependencies>
     <dependency>
       <groupId>org.apache.maven</groupId>
@@ -14,7 +18,6 @@
       <version>3.8.1</version>
       <scope>provided</scope>
     </dependency>
-    <!-- Maven Plugin 开发核心 -->
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-plugin-api</artifactId>
@@ -26,31 +29,92 @@
       <version>3.6.4</version>
       <scope>provided</scope>
     </dependency>
-
-    <!-- 灵魂组件：QDox 源码解析 -->
     <dependency>
       <groupId>com.thoughtworks.qdox</groupId>
       <artifactId>qdox</artifactId>
       <version>2.0.3</version>
     </dependency>
-
-    <!-- JSON 序列化 -->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
       <version>2.15.2</version>
     </dependency>
   </dependencies>
+
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
+
   <developers>
     <developer>
       <name>Deric Huang</name>
       <email>1391984699@qq.com</email>
     </developer>
   </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/nuaahuang/OmniOpenAIDoc.git</connection>
+    <developerConnection>scm:git:ssh://github.com:nuaahuang/OmniOpenAIDoc.git</developerConnection>
+    <url>https://github.com/nuaahuang/OmniOpenAIDoc</url>
+  </scm>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.2.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.6</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>

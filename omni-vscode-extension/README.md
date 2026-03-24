@@ -1,82 +1,32 @@
-# OmniSense README
+# OmniOpenAIDoc
 
-This is the README for your extension "OmniSense". After writing up a brief description, we recommend including the following sections.
-
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+**OmniOpenAIDoc** is a VS Code extension built for the AI-native developer. It eliminates "context gaps" for AI Agents (like Cursor, Claude, and Copilot) when dealing with binary dependencies by synchronizing semantic metadata.
 
 ---
 
-## Following extension guidelines
+## 🧐 Core Value
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+Traditional AI coding assistants struggle with compiled Java libraries, often seeing only decompiled code or missing Javadocs. Used alongside the `omni-openai-doc-maven-plugin`, this extension injects source-level semantics (comments, logical intent, and structures) directly into your AI's context to eliminate hallucinations.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+## 🚀 Quick Start
 
-## Working with Markdown
+Get full semantic awareness for your AI assistant in just two steps:
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+1. **Install** the `OmniOpenAIDoc` extension from the VS Code Marketplace.
+2. **Synchronize**: Open the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`) and run:
+   > **OmniOpenAIDoc: Sync Semantic Context**
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+## 📦 Requirements
 
-## For more information
+* **Maven Plugin**: Ensure your Java project has generated semantic metadata via `omni-openai-doc-maven-plugin`.
+* **Build Completed**: Run `mvn install` before syncing to ensure the necessary index files are produced.
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+## ⚙️ Extension Settings
 
-**Enjoy!**
+* `omniOpenAIDoc.autoScan`: (Default: `true`) Automatically scans the classpath for semantic metadata.
 
-omnisense/
-├── src/
-│   ├── extension.ts        # 插件入口 (由 yo code 生成，待修改)
-│   ├── scanner/            # 放入 RepositoryScanner.ts
-│   ├── generator/          # 放入 SourceGenerator.ts
-│   ├── gateway/            # 放入 ContextGateway.ts
-│   └── utils/              # 存放 Maven 路径处理等工具类
-├── package.json            # 插件配置文件 (需注册命令)
-├── tsconfig.json           # TS 编译配置
-└── webpack.config.js       # Webpack 配置
+---
+
+## 📄 License
+
+Apache License 2.0
