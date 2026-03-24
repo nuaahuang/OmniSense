@@ -1,5 +1,7 @@
-# OmniOpenAIDoc: Software Supply Chain 2.0 🚀 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# OmniOpenAIDoc: Software Supply Chain 2.0 🚀 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Marketplace](https://img.shields.io/badge/Marketplace-OmniOpenAIDoc-brightgreen)](https://marketplace.visualstudio.com/items?itemName=derichuang.OmniOpenAIDoc)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.nuaahuang/omni-openai-doc-maven-plugin.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.nuaahuang/omni-openai-doc-maven-plugin)
 
 
 > **"Distribution is Documentation; Shipping is Semantics."** > **“发布即文档，分发即语义。”**
